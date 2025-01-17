@@ -12,14 +12,14 @@ function convertToRoman(num) {
   //your code here
   let result = "";
   let keys = Object.keys(obj);
-  
-  for(const key of keys) {
-    while(num>=obj[key]){
-      result += key;
-      num -= obj[key];
+  for(let i=0; i<keys.length; i++) {
+    const [roman, value] = obj[keys[i]]
+    while(num>=value){
+      result+=roman;
+      num-=value;
     }
   }
-  return result;
+  return result
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
